@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>Мастера</title>
+    </head>
+    <body>
+        <div class="p-3 mb-2 bg-success text-white">.
+        <ol class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            <li><a href="/master">Мастера</a></li>
+        </ol>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Телефон</th>
+                <th>Почта</th>
+                </tr>
+            </thead>
+            {{range . }}
+            <tr>
+                <td>{{.Name}}</td>
+                <td>{{.Surname}}</td>
+                <td>{{.Phone}}</td>
+                <td>{{.Email}}</td>
+            </tr>
+            {{end}}
+        </table>
+        <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        </div>
+    </body>
+</html>
