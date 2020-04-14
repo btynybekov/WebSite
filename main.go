@@ -19,7 +19,6 @@ func main() {
 	})
 	http.HandleFunc("/catalog", CatalogIndex)
 	http.HandleFunc("/master", MasterIndex)
-	http.HandleFunc("/vacation", VacationIndex)
 	http.ListenAndServe(":8080", nil)
 }
 func CatalogIndex(w http.ResponseWriter, r *http.Request) {
@@ -52,10 +51,17 @@ func MasterIndex(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func VacationIndex(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "POST" {
+func EditIndex(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "GET" {
 		http.Error(w, http.StatusText(405), 405)
 		return
 	}
-	
+	mas, err := models.EditPage(w, r)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	for _, mn := range mas {
+		fmt.Fprintln(w, mn.MasterID, mn.Name, mn.Surname, mn.Phone, mn.Email)
+	}
 }
