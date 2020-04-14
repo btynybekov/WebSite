@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Edt Product</title>
+    </head>
+    <body>
+        <h3>Edit Product</h3>
+        <form method="POST">
+            <label>Имя</label><br>
+            <input type="text" name="Имя" value="{{.Name}}" /><br><br>
+            <label>Фамилия</label><br>
+            <input type="text" name="Фамилия" value="{{.Surname}}" /><br><br>
+            <label>Price</label><br>
+            <input type="text" name="Телефон" value="{{.Phone}}" /><br><br>
+            <label>Почта</label><br>
+            <input type="text" name "Почта" value="{{.Email}}" /><br><br>
+            <input type="submit" value="Отправить" />
+        </form>
+    </body>
+</html>
